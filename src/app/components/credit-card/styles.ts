@@ -31,10 +31,16 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
-  footer: {},
-  flag: {},
+  footer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  flag: {
+    flexDirection: "row",
+  },
   red: {
     backgroundColor: "red",
+    marginRight: -12,
   },
   orange: {
     backgroundColor: "orange",
