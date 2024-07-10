@@ -1,20 +1,33 @@
 import { Text, View } from "react-native";
 import { styles } from "./styles";
 import Animated, {
+  interpolate,
   SharedValue,
   useAnimatedStyle,
+  withTiming,
 } from "react-native-reanimated";
+import { CARD_SIDE } from "../../constants/crediCardProps";
 
 type CrediCardProps = {
   cardSide: SharedValue<number>;
 };
+
 export function CreditCard({ cardSide }: CrediCardProps) {
   const frontAnimatedStyles = useAnimatedStyle(() => {
-    return {};
+    const rotateValue = interpolate(
+      cardSide.value,
+      [CARD_SIDE.front, CARD_SIDE.back],
+      [0, 180]
+    );
+    return {
+      transform: [
+        { rotateY: withTiming(`${rotateValue}deg`, { duration: 1000 }) },
+      ],
+    };
   });
   return (
     <View>
-      <Animated.View style={[styles.card, styles.front]}>
+      <Animated.View style={[styles.card, styles.front, frontAnimatedStyles]}>
         <View style={styles.header}>
           <View style={[styles.circle, styles.logo]} />
           <Text>Meu Cartão</Text>

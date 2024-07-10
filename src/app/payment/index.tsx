@@ -2,13 +2,28 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import { CreditCard } from "../components/credit-card";
 import { useSharedValue } from "react-native-reanimated";
+import { CARD_SIDE } from "../constants/crediCardProps";
 
 export function Payment() {
-  const cardSide = useSharedValue(0);
+  const cardSide = useSharedValue(CARD_SIDE.front);
+
+  function showFrontCard() {
+    cardSide.value = CARD_SIDE.front;
+  }
+  function showBackCard() {
+    cardSide.value = CARD_SIDE.back;
+  }
+  function handleFlipCard() {
+    if (cardSide.value === CARD_SIDE.front) {
+      showBackCard();
+    } else {
+      showFrontCard();
+    }
+  }
   return (
     <View style={styles.container}>
       <CreditCard cardSide={cardSide} />
-      <TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={handleFlipCard}>
         <Text>Inverter</Text>
       </TouchableOpacity>
     </View>
