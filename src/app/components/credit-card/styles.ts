@@ -2,17 +2,21 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   card: {
+    marginTop: 40,
     width: "100%",
-    height: 200,
+    height: 250,
     borderRadius: 12,
-    padding: 24,
+    padding: 32,
     justifyContent: "space-between",
   },
   front: {
-    backgroundColor: "#DAE1E7",
+    backgroundColor: "#8F26D7",
+    backfaceVisibility: "hidden",
+    position: "absolute",
   },
   back: {
-    backgroundColor: "#BAC1C7",
+    backgroundColor: "#8214D1",
+    backfaceVisibility: "hidden",
   },
   circle: {
     width: 24,
@@ -20,7 +24,10 @@ export const styles = StyleSheet.create({
     borderRadius: 12,
   },
   logo: {
-    backgroundColor: "#8795A0",
+    backgroundColor: "#581c87",
+  },
+  nameLog: {
+    color: "#DAE1E7",
   },
   header: {
     flexDirection: "row",
@@ -30,6 +37,7 @@ export const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: "bold",
+    color: "#DAE1E7",
   },
   footer: {
     flexDirection: "row",
@@ -44,5 +52,14 @@ export const styles = StyleSheet.create({
   },
   orange: {
     backgroundColor: "orange",
+  },
+  label: {
+    fontSize: 14,
+    color: "#a1a1aa",
+  },
+  value: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#DAE1E7",
   },
 });
