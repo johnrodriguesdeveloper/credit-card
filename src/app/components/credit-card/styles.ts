@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     borderRadius: 12,
   },
   logo: {
-    backgroundColor: "#581c87",
+    backgroundColor: "#86198f",
   },
   nameLog: {
     color: "#DAE1E7",
