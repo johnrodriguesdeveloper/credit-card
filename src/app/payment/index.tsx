@@ -7,19 +7,21 @@ import { useState } from "react";
 import { CreditCard } from "../components/credit-card";
 
 export function Payment() {
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
-  const [date, setDate] = useState("");
-  const [code, setCode] = useState("");
+  const [name, setName] = useState<string>("");
+  const [number, setNumber] = useState<string>("");
+  const [date, setDate] = useState<string>("");
+  const [code, setCode] = useState<string>("");
 
-  const cardSide = useSharedValue(CARD_SIDE.front);
+  const cardSide = useSharedValue<number>(CARD_SIDE.front);
 
   function showFrontCard() {
     cardSide.value = CARD_SIDE.front;
   }
+
   function showBackCard() {
     cardSide.value = CARD_SIDE.back;
   }
+
   function handleFlipCard() {
     if (cardSide.value === CARD_SIDE.front) {
       showBackCard();
@@ -27,6 +29,7 @@ export function Payment() {
       showFrontCard();
     }
   }
+
   return (
     <View style={styles.container}>
       <CreditCard
@@ -38,7 +41,11 @@ export function Payment() {
           code,
         }}
       />
-      <TouchableOpacity style={styles.button} onPress={handleFlipCard}>
+      <TouchableOpacity
+        testID="flipButton"
+        style={styles.button}
+        onPress={handleFlipCard}
+      >
         <Text>Inverter</Text>
       </TouchableOpacity>
       <View style={styles.form}>
