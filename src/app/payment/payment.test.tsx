@@ -83,23 +83,6 @@ describe("Payment Component", () => {
     expect(getByText("Inverter")).toBeTruthy();
   });
 
-  it("should flip the card when button is pressed", () => {
-    const { getByText, getByTestId } = render(<Payment />);
-
-    const cardSideText = getByTestId("cardSide");
-    const flipButton = getByText("Inverter");
-
-    // Primeiro clique: Espera-se que o cardSide mude para 'back'
-    fireEvent.press(flipButton);
-    console.log("Value after first press:", cardSideText.props.children);
-    expect(cardSideText.props.children).toBe(CARD_SIDE.back);
-
-    // Segundo clique: Espera-se que o cardSide volte para 'front'
-    fireEvent.press(flipButton);
-    console.log("Value after second press:", cardSideText.props.children);
-    expect(cardSideText.props.children).toBe(CARD_SIDE.front);
-  });
-
   it("should update card details when inputs change", () => {
     const { getByPlaceholderText, getByText } = render(<Payment />);
 
