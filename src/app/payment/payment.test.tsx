@@ -1,7 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react-native";
 import { Payment } from "./index";
-import { CARD_SIDE } from "../types/cardSideProps";
 
 // Mock react-native-reanimated
 jest.mock("react-native-reanimated", () => {

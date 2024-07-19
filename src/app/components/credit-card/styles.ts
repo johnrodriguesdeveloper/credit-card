@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    color: "#a1a1aa",
+    color: "#fff",
   },
   value: {
     fontSize: 16,
