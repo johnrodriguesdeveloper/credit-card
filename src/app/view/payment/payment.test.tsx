@@ -16,7 +16,7 @@ jest.mock("react-native-reanimated", () => {
   };
 });
 
-// Mock CreditCard component
+
 jest.mock("../components/credit-card", () => {
   const { View, Text } = require("react-native");
   return {
@@ -40,7 +40,6 @@ jest.mock("../components/credit-card", () => {
   };
 });
 
-// Mock Input component
 jest.mock("../components/input", () => {
   const { TextInput } = require("react-native");
   return {

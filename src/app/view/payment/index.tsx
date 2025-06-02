@@ -1,10 +1,10 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import { useSharedValue } from "react-native-reanimated";
-import { CARD_SIDE } from "../types/cardSideProps";
-import { Input } from "../components/input";
+import { CARD_SIDE } from "../../types/cardSideProps";
+import { Input } from "../../components/input";
 import { useState } from "react";
-import { CreditCard } from "../components/credit-card";
+import { CreditCard } from "../../components/credit-card";
 
 export function Payment() {
   const [name, setName] = useState("");
@@ -13,7 +13,6 @@ export function Payment() {
   const [code, setCode] = useState("");
 
   const cardSide = useSharedValue(CARD_SIDE.front);
-
   function showFrontCard() {
     cardSide.value = CARD_SIDE.front;
   }
@@ -48,7 +47,7 @@ export function Payment() {
           onFocus={showFrontCard}
         />
         <Input
-          placeholder="Nome do cartão"
+          placeholder="Numero do cartão"
           keyboardType="numeric"
           maxLength={16}
           onChangeText={setNumber}

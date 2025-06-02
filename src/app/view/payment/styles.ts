@@ -8,6 +8,9 @@ export const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     marginVertical: 32,
+    backgroundColor: '#D3D3D3',
+    padding: 8,
+    borderRadius: 4
   },
   form: {
     gap: 12,
